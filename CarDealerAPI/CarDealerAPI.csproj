@@ -195,10 +195,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Car.cs">
+      <DependentUpon>Cars.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cars.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cars.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cars.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cars.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cars.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -219,6 +227,12 @@
     <Content Include="Models\Cars.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cars.Context.cs</LastGenOutput>
+      <DependentUpon>Cars.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Cars.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cars.edmx</DependentUpon>
+      <LastGenOutput>Cars.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -248,9 +262,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Cars.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\Cars.edmx.diagram">
+    <Content Include="Models\Cars.edmx.diagram">
       <DependentUpon>Cars.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
