@@ -15,16 +15,14 @@ namespace CarDealerAPI.Controllers
         public JObject GetAllCars()
         {
             return CarsToJson(cDB.Cars.ToList());
-            
         }
         [HttpGet]
         public JObject GetCar(int Id)
         {
             Models.Car car = cDB.Cars.Find(Id);
-            
             return CarToJson(car);
         }
-        [HttpGet]
+        [HttpGet] 
         public JObject GetAllCars(string make, string model, int? year, string color)
         {
             return CarsToJson(cDB.Cars.Where(x => (make != null ? x.Make == make : true) && 
@@ -52,7 +50,8 @@ namespace CarDealerAPI.Controllers
         private JObject CarsToJson(IEnumerable<Models.Car> cars)
         {
             JObject jCars = new JObject();
-            jCars["Count"] = cars.Count(); JArray temp = new JArray();
+            jCars["Count"] = cars.Count();
+            JArray temp = new JArray();
             foreach (Models.Car car in cars)
             {
                 temp.Add(CarToJson(car));

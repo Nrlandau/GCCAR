@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CarDealerAPI.Models.Car>
+@{
+    ViewBag.Title = "GetCars";
+}
+<table class="table">
+    <tr>
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Color
+        </th>
+    </tr>
+    @foreach (var car in Model)
+    {
+        <tr>
+            <td>
+                @car.Make
+            </td>
+            <td>
+                @car.Model
+            </td>
+            <td>
+                @car.year
+            </td>
+            <td>
+                @car.color
+            </td>
+        </tr>
+    }
+</table>
+<h3>SortBy</h3>
+<form action="/Home/GetCarsBy">
+    <label>Make</label><input type="text" name="Make" value="@ViewBag.Make"/>
+    <label>Model</label><input type="text" name="Model"  value="@ViewBag.Model"/>
+    <label>Year</label><input type="number" name="Year"  value="@ViewBag.Year"/>
+    <label>Color</label><input type="text" name="Color" value="@ViewBag.Color"/>
+    <input type="submit" value="Submit" />
+</form>
+
