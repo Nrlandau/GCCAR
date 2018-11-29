@@ -25,6 +25,7 @@ namespace CarDealerAPI.Controllers
         [HttpGet] 
         public JObject GetAllCars(string make, string model, int? year, string color)
         {
+
             return CarsToJson(cDB.Cars.Where(x => (make != null ? x.Make == make : true) && 
                                             (model != null ? x.Model == model : true) && 
                                             (year != null ? x.year == year : true) &&
